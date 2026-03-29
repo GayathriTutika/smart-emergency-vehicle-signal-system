@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Emergency Vehicle Priority System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main class="page">
+        <section class="hero">
+            <div class="hero-copy">
+                <p class="eyebrow">Software Prototype</p>
+                <h1>Cloud-Based Emergency Signal Priority</h1>
+                <p class="subtitle">
+                    This prototype shows the software layer only: vehicle GPS tracking,
+                    cloud processing, nearest signal detection, and priority command generation.
+                </p>
+            </div>
+
+            <div class="hero-card">
+                <p class="card-label">System Mode</p>
+                <h2 id="systemMode">Monitoring</h2>
+                <p id="statusMessage">Waiting for emergency vehicle GPS updates.</p>
+                <button id="simulateButton">Start GPS Simulation</button>
+            </div>
+        </section>
+
+        <section class="dashboard-grid">
+            <article class="panel">
+                <h3>Emergency Vehicle Feed</h3>
+                <div class="info-grid">
+                    <div>
+                        <p class="info-label">Vehicle ID</p>
+                        <p id="vehicleId">AMB-01</p>
+                    </div>
+                    <div>
+                        <p class="info-label">Vehicle Type</p>
+                        <p id="vehicleType">Ambulance</p>
+                    </div>
+                    <div>
+                        <p class="info-label">Location</p>
+                        <p id="vehicleLocation">--</p>
+                    </div>
+                    <div>
+                        <p class="info-label">Speed</p>
+                        <p id="vehicleSpeed">--</p>
+                    </div>
+                    <div>
+                        <p class="info-label">GPS Timestamp</p>
+                        <p id="vehicleTimestamp">--</p>
+                    </div>
+                    <div>
+                        <p class="info-label">Last Cloud Update</p>
+                        <p id="lastUpdate">--</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="panel">
+                <h3>Cloud Decision Engine</h3>
+                <div class="decision-card">
+                    <div class="decision-badge" id="priorityBadge">No Priority</div>
+                    <div class="decision-grid">
+                        <div>
+                            <p class="info-label">Nearest Signal</p>
+                            <p id="targetSignal">--</p>
+                        </div>
+                        <div>
+                            <p class="info-label">Distance</p>
+                            <p id="targetDistance">--</p>
+                        </div>
+                        <div>
+                            <p class="info-label">Target Lane</p>
+                            <p id="targetLane">--</p>
+                        </div>
+                        <div>
+                            <p class="info-label">Generated Command</p>
+                            <p id="targetCommand">NO_ACTION</p>
+                        </div>
+                    </div>
+                    <div class="hardware-box">
+                        <p class="info-label">Hardware Layer Status</p>
+                        <p id="hardwareStatus">Awaiting GPS updates</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section class="panel">
+            <div class="section-head">
+                <div>
+                    <p class="eyebrow">Traffic Network</p>
+                    <h3>Which Signal Should Change?</h3>
+                </div>
+                <p class="network-note">
+                    Signals inside 1 km are candidates for emergency priority.
+                </p>
+            </div>
+            <div class="signal-list" id="signalList"></div>
+        </section>
+
+        <section class="panel">
+            <h3>Prototype Scope</h3>
+            <ol class="steps">
+                <li>Phone or GPS tracker sends emergency vehicle location every 5 seconds.</li>
+                <li>Cloud server receives and processes the GPS update.</li>
+                <li>Server finds the nearest traffic signal from the stored signal list.</li>
+                <li>If distance is within 1 km, a priority command is generated.</li>
+                <li>Dashboard shows which signal should change.</li>
+                <li>Controller box, relay, and real signal switching are future hardware scope.</li>
+            </ol>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
