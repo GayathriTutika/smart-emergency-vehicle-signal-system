@@ -1,5 +1,9 @@
 # 🚦 Smart Emergency Vehicle Priority System
 
+🌐 **Live Demo:** https://smart-emergency-vehicle-signal-system.onrender.com
+
+---
+
 ## 📌 Overview
 
 This project is a software-based prototype of a cloud-driven traffic management system designed to prioritize emergency vehicles such as ambulances, fire trucks, and police vehicles.
@@ -47,7 +51,7 @@ The system simulates real-time GPS tracking of emergency vehicles and dynamicall
 
 ---
 
-## ▶️ How to Run
+## ▶️ How to Run Locally
 
 ```bash
 pip install -r requirements.txt
@@ -60,7 +64,9 @@ http://127.0.0.1:5000
 ---
 
 ## 📸 Output
+
 ![Dashboard](dashboard.png)
+
 ---
 
 ## 🎯 Objective
@@ -78,6 +84,13 @@ To design a smart traffic control system that reduces delays for emergency vehic
 
 ---
 
+## 🔗 Links
+
+* 🌐 Live Demo: https://smart-emergency-vehicle-signal-system.onrender.com
+* 💻 GitHub Repo: https://github.com/GayathriTutika/smart-emergency-vehicle-signal-system
+
+---
+
 ## 👤 Author
 
-Tutika Gayathri
+**Tutika Gayathri**
